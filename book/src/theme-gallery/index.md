@@ -5,6 +5,7 @@ Here you can find an overview over all themes shipped with this template.
 - [Default](#default)
 - [Bipartite](#bipartite)
 - [Bristol](#bristol)
+- [Metropolis](#metropolis)
 
 ---
 
@@ -115,6 +116,7 @@ It features a dominant partition of space into a bright and a dark side.
 ```
 ![bipartite theme screenshot](./bipartite.png)
 
+---
 
 ## Bristol
 _[go to top](#theme-gallery)_
@@ -158,7 +160,7 @@ Default logos are shipped with the theme, however they can be swapped out for an
     theme: bristol-theme(),
 )
 
-#slide(theme-variant: "title")
+#slide(theme-variant: "title slide")
 
 #new-section("section name")
 
@@ -187,3 +189,57 @@ This is a quite a wide column
 ![UoB theme screenshot](./bristol.png)
 
 ---
+
+## Metropolis
+_[go to top](#theme-gallery)_
+
+This theme is inspired by the [Metropolis beamer theme](https://github.com/matze/mtheme), created by Matthias Vogelgesang.
+
+```typ
+#import "themes/metropolis.typ": *
+#show: slides(
+  // ...
+  theme: metropolis-theme(),
+)
+```
+
+### Options
+- `extra`: to appear after author(s) and date on the title slide. Used for instance for affiliation, location, logos, etc.
+
+### Variants
+- `title slide`: shows a nicely formatted title slide
+- `wake up`: uniform dark background, enlarged text
+
+### Extra keyword arguments
+- `title`: optional, a title for that slide
+
+### Showcase
+```typ
+#import "slides.typ": *
+#import "themes/metropolis.typ": *
+
+#show: slides.with(
+    authors: ("Author A", "Author B"), short-authors: "Short author",
+    title: "Title", short-title: "Short title", subtitle: "Subtitle",
+    date: "Date",
+    theme: metropolis-theme(extra: "Extra"),
+)
+#set text(font: "Fira Sans", weight: "light", size:20pt)
+#show math.equation: set text(font: "Fira Math")
+#set strong(delta: 100)
+#set par(justify:true)
+
+#slide(theme-variant: "title slide")
+
+#slide(title: "Slide title")[
+  A slide
+]
+
+#slide()[
+  A slide without a title
+]
+
+#slide(theme-variant: "wake up")[
+  Wake up!
+]
+```
