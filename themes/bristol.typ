@@ -13,13 +13,19 @@
 
     let title-slide(slide-info, bodies) = {
 
-     	place(image(watermark, width:100%))
+        if watermark != none {
+     	    place(image(watermark, width:100%))
+        }
 
         v(5%)
 	grid(columns: (5%, 1fr, 1fr, 5%),
 	    [],
-	    align(bottom + left)[#image(logo, width:40%)],
-	    align(bottom + right)[#image(secondlogo, width:40%)],
+            if logo != none {
+	            align(bottom + left)[#image(logo, width:40%)]
+            },
+            if secondlogo != none {
+	            align(bottom + right)[#image(secondlogo, width:40%)]
+            },
 	    [])
 
         v(-10%)
@@ -96,7 +102,9 @@
 
         // header
         decoration("header", grid(columns: (1fr, 1fr),
-	            align(left, image(logo, width:35%)),
+            if logo != none {
+                align(left, image(logo, width:35%))
+            },
 		    align(right, grid(rows: (.5em, .5em),
 		        text(color, .7em)[#data.short-title],
 			[],

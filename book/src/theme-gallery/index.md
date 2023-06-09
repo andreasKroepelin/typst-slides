@@ -135,7 +135,7 @@ It features a University of Bristol branding by default, however the logos and c
 - `watermark`: file path for a watermark image to span the title slide, default "bristol/watermark.svg"
 - `logo`: file path for a logo image to appear on every slide, default "bristol/logo.svg"
 - `secondlogo`: file path for an additional logo image, to appear on the first slide only, default "bristol/secondlogo.svg"
-Default logos are shipped with the theme, however they can be swapped out for another institution's branding by changing the `watermark`, `logo`, and `secondlogo` file paths when instantiating the theme.
+Default logos are shipped with the theme, however they can be swapped out for another institution's branding by changing the `watermark`, `logo`, and `secondlogo` file paths or disabled by setting them to `none` when instantiating the theme.
 
 ### Variants
 - `title slide`: shows a nicely formatted title slide
@@ -158,7 +158,7 @@ Default logos are shipped with the theme, however they can be swapped out for an
     theme: bristol-theme(),
 )
 
-#slide(theme-variant: "title")
+#slide(theme-variant: "title slide")
 
 #new-section("section name")
 
