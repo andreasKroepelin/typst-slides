@@ -355,6 +355,7 @@
         short-title: short-title,
         short-authors: short-authors,
         date: date,
+        aspect-ratio: aspect-ratio,
     )
     let the-theme = theme(data)
     global-theme.update(the-theme)
