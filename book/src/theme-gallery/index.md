@@ -145,6 +145,7 @@ Default logos are shipped with the theme, however they can be swapped out for an
 - `title`: optional, a title for that slide
 - `colwidths` : optional, array specifying width of each column; default `1fr` per column
 - `gutter` : optional, integer, relative length, fraction, or array, specifying the gap between columns if a multicolumn (multi-body) slide is chosen; default `0.2em`
+- `outlined`: optional, boolean sets the `outlined` property of the title `heading`
 
 ### Showcase
 ```typ

@@ -110,7 +110,7 @@
             block(
                 width: 100%, inset: (x: 4.5%, y: -.5em), breakable: false,
                 outset: 0em,
-                heading(level: 1, text(color)[#slide-info.title])
+                heading(level: 1, outlined: slide-info.at("outlined", default: true), text(color)[#slide-info.title])
             )
 	    v(.7em)
         }
