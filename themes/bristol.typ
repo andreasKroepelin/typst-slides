@@ -106,13 +106,20 @@
 		)
 	)
 
+        locate(loc => if section-changed.at(loc) {
+            // For some reason we need to take something from the outside scope.
+            // Otherwise the update isn't done AFAICT, probably a bug in typst
+            let _ = slide-info
+            section-changed.update(false)
+            place(hide(heading(level: 1, section.at(loc))))
+        })
         if "title" in slide-info {
             block(
                 width: 100%, inset: (x: 4.5%, y: -.5em), breakable: false,
                 outset: 0em,
-                heading(level: 1, text(color)[#slide-info.title])
+                heading(level: 2, text(color)[#slide-info.title])
             )
-	    v(.7em)
+            v(.7em)
         }
         
         v(1fr)

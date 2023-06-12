@@ -8,8 +8,13 @@
 #let repetitions = counter("repetitions")
 #let global-theme = state("global-theme", none)
 #let handout-mode = state("handout-mode", false)
+// Is set to true whenever a new section starts, useful to create section headings
+#let section-changed = state("changed-section", false)
 
-#let new-section(name) = section.update(name)
+#let new-section(name) = {
+    section.update(name)
+    section-changed.update(name != none)
+}
 
 // =================================
 // ======== DYNAMIC CONTENT ========
